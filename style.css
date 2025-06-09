@@ -1,0 +1,134 @@
+* {  /* Engloba todo dentro de la pagina*/
+
+    /*atachment*/
+
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 90px 20px 0;
+    background-image: url("./fondo.jpg");
+    background-size: cover;
+}
+
+.header {
+    background-color: rgb(164, 164, 243);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px; /* Es el espacio que abarcara en el navegador*/
+    margin: 0 auto; /* Centra los objetos en la barra*/
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado por ser link*/
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none; /* Elimina los puntos de las listas*/
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px; /* Margenes entre los textos*/
+    line-height: 80px;
+    text-transform: uppercase; /* Transforma las letras en mayusculas*/
+    width: max-content; /* No se acorta el texto*/
+}
+
+.nav-menu-link { 
+    padding: 8px 12px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover {/* Efecto de sombreado*/
+    background-color: aquamarine;
+    transition: 0.5s;
+}
+
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px; /* Tamaño*/
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+
+    display: none;
+}
+
+
+/* Esta configuracion es solo para menor de 768*/
+@media (max-widht: 768px) { /* Si el dispositivo mide menos de 768, cambia*/
+    body {
+        padding: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: beige;
+        position: fixed; /* No importa la forma de la ventana, se ajusta*/
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px); /* Calculo para desplegar menu cuando sea muy pequeño*/
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,  /* Efecto de sombreado*/
+    .nav-menu-link_active {
+        background: none;
+        color: beige;
+    }
+
+.nav-toggle {
+    display: block;
+}
+
+.nav-menu_visible {
+    left: 0%;
+}
+
+}
